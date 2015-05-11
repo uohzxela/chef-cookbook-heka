@@ -8,6 +8,7 @@ action :create do
 
   template toml_file_path do
     source "from_log_to_kafka.toml.erb"
+    cookbook "heka"
     variables(
       :log_directory => log_directory,
       :file_match => file_match,
